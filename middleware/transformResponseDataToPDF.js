@@ -13,13 +13,19 @@ function transformResponseDataToPDF(req, res){
     const result = res.data;
     const data = result.data;
     const firstEstimate = data[0];
-    /* for testing purposes, pass example object "sampleEstimate", built in EstimateService
-    as second parameter in nunjucks.render() */
+
+    res.type('application/pdf');
+
     nunjucks.render('template.njk', firstEstimate, function(error, content){
-        error ? console.log(error) :
-        wkhtmltopdf(content, { output: 'estimate.pdf' });
-        res.type('html');
-        res.end(content);
+        wkhtmltopdf(content, {}, function (err, stream) {
+            stream.on('data', function(data) {
+                res.write(data);
+            });
+            stream.on('end', function() {
+                res.status(200).end();
+            });
+        });
     });
 };
+
 module.exports = transformResponseDataToPDF;
