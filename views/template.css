@@ -1,0 +1,219 @@
+p {
+    margin: 0;
+}
+
+.header-row-1 {
+
+    height: 120px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mesquita-logo {
+    height: inherit;
+    width: auto;
+}
+
+.letter-box {
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid black;
+}
+
+.letter {
+    font-size: 20px;
+}
+
+.presupuesto-data-box {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    height: inherit;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.header-row-2 {
+    height: 150px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 3px solid black;
+}
+
+.cross-box {
+    width: 10%;
+    height: inherit;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.square {
+    box-sizing: border-box;
+}
+
+.square-1 {
+    height: 30%;
+    width: 50%;
+
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.square-2 {
+    height: 30%;
+    width: 50%;
+
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.square-3 {
+    height: 70%;
+    width: 50%;
+
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+
+.square-4 {
+    height: 70%;
+    width: 50%;
+
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.header-row-3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.graybox-large {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 3px 0 0 0;
+
+    width: 100%;
+    background-color: #d7d7d7;
+    border: 1px solid black;
+}
+
+.graybox-large-separator,
+.graybox-large-separator-column,
+.clientbox,
+.data-graybox-large-separator {
+    width: 50%;
+    display: flex;
+}
+
+.data-graybox-large {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.graybox-half {
+    margin: 0 0 0 50%;
+    width: 50%;
+    height: 20px;
+    background-color: #d7d7d7;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.data-graybox-half {
+    width: 50%;
+    margin: 0 0 0 50%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.big-border-bottom {
+    border-bottom: 3px solid black;
+}
+
+.data-graybox-large-separator-long,
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-box-container {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.data-box {
+    border: 1px solid black;
+    width: 20%;
+}
+
+/* TABLE HEADER STYLING */
+
+.graybox-header-table{
+    margin: 3px 0 0 0;
+    background-color: #d7d7d7;
+    border: 1px solid black;
+}
+
+/* TABLE CELL STYLING */
+
+.presupuesto-cell {
+    text-align: right;
+}
+
+.products-table, .account-table, .graybox-header-table, tr {
+    width: 100%;
+}
+
+.productquantity-cell {
+    width: 5%;
+}
+
+.productprice-cell,  .productestimate-cell, .productdiscount-cell{
+    width: 10%;
+}
+
+.productname-cell{
+    width: 65%;
+}
+
+.account-cell{
+    box-sizing: border-box;
+    padding-left: 80px;
+}
+
+.venta-data-flexbox{
+    background-color: #d7d7d7;
+    border: 1px solid black;
+}
+
+.table-header{
+    border-right: 1px solid black;
+}
