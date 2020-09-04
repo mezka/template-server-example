@@ -10,13 +10,10 @@ class MessageService {
   }
 
   async find () {
-    // Just return all our messages
-    return this.messages;
+    return {data: this.messages};
   }
 
   async create (data) {
-    // The new message is the data merged with a unique identifier
-    // using the messages length since it changes whenever we add one
     const message = {
       id: this.messages.length,
       from: data.from,
@@ -24,7 +21,6 @@ class MessageService {
       message: data.message
     }
 
-    // Add new message to the list
     this.messages.push(message);
 
     return message;

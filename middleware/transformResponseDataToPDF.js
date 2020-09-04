@@ -17,14 +17,26 @@ function transformResponseDataToPDF(req, res){
     res.type('application/pdf');
 
     nunjucks.render('template.njk', firstEstimate, function(error, content){
-        wkhtmltopdf(content, {}, function (err, stream) {
-            stream.on('data', function(data) {
-                res.write(data);
+        if (!error) {
+            wkhtmltopdf(content, {}, function (err, stream) {
+                if (!err) {
+                    stream.on('data', function(data) {
+                        res.write(data);
+                    });
+                    stream.on('end', function() {
+                        res.status(200).end();
+                    });
+                } else {
+                    /* on actual implementation it'll return json */
+                    res.type('html');
+                    res.end("<h2 style='background: pink; border-radius: 3px; padding: 4px;'>Trouble transforming stream's content to PDF" + err);
+                }
             });
-            stream.on('end', function() {
-                res.status(200).end();
-            });
-        });
+        } else {
+            /* on actual implementation it'll return json */
+            res.type('html');
+            res.end("<h2 style='background: pink; border-radius: 3px; padding: 4px;'>Trouble rendering estimate's page</h2>" + error);
+        }
     });
 };
 

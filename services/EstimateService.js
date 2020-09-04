@@ -3,6 +3,7 @@ class EstimateService {
     const sampleEstimate = {
       id: 0,
       presupuesto: {
+        presupuestofecha: "3-9-2020",
         presupuestoid: 1,
         presupuestoseller: 5,
         presupuestopaymethod: 1,
